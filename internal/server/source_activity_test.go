@@ -30,6 +30,7 @@ func TestSendSourceActivityErrorTypes(t *testing.T) {
 		{"source deleted", fmt.Errorf("inspect: %w", core.ErrSourceNotFound), http.StatusNotFound, models.NotFoundErrorType},
 		{"activity unavailable", datasource.ErrSourceActivityUnavailable, http.StatusServiceUnavailable, models.ActivityUnsupportedErrorType},
 		{"operation not supported", fmt.Errorf("inspect: %w", datasource.ErrOperationNotSupported), http.StatusServiceUnavailable, models.ActivityUnsupportedErrorType},
+		{"scan limit exceeded", fmt.Errorf("inspect: %w", datasource.ErrSourceActivityLimitExceeded), http.StatusUnprocessableEntity, models.ActivityLimitExceededErrorType},
 		{"timeout", context.DeadlineExceeded, http.StatusGatewayTimeout, models.GeneralErrorType},
 		{"backend failure", errors.New("connection refused"), http.StatusInternalServerError, models.GeneralErrorType},
 	}
