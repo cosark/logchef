@@ -70,6 +70,11 @@ helm install logchef ./deployment/helm --namespace logchef --create-namespace
 
 See [`deployment/helm/values.yaml`](deployment/helm/values.yaml) for options and requirements.
 
+## One-Click Deploy
+
+<a href="https://repocloud.io/details/Logchef/"><img src="https://d16t0pc4846x52.cloudfront.net/deploylobe.svg" alt="Deploy on RepoCloud" height="42"></a>
+<a href="https://railway.com/deploy/logchef"><img src="https://railway.com/button.svg" alt="Deploy on Railway" height="42"></a>
+
 ## CLI
 
 Logchef includes a cross-platform CLI for querying and investigating logs directly from your terminal.
